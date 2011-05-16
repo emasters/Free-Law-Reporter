@@ -22,7 +22,7 @@ This is a command line PHP script with 2 options.
 /**
  * descend a directory and parse XML into valid xhtml.
  */
- include_once("epub/lib.uuid.php"); //to generate a uuid for each document
+ include_once("includes/lib.uuid.php"); //to generate a uuid for each document
  $casedir = $argv[1]; // the directory to start in
  $volnum = $argv[2]; // set the volume number to use for directory structure
  //create the directory to save this volume's files into.
