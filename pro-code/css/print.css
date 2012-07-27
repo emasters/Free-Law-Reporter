@@ -1,0 +1,45 @@
+/* 
+
+    By Public.Resource.Org, Inc.
+    Last revised: Fri Feb 8 16:23:45 PST 2008
+    No Rights Reserved.
+ 
+    Author: Joel Hardi <joel -at- hardi.org>
+   
+    Printer stylesheet. For documentation, see case.css
+
+*/
+
+html {
+  background: transparent;
+  font-size: 100%;
+}
+
+body {
+  margin: 1em 4.2em 1em 4.5em;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+a {
+  color: black;
+}
+
+div.footnotes {
+  border-top: 1pt solid black;
+  padding-top: 1pt;
+}
+
+div.footnote {
+  border-top: 1pt solid #999;
+}
+
+div.footnote a.footnote {
+  top: 0;
+}
+
+span.num {
+  color: #666;
+  left: -11em;
+}
