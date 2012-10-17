@@ -1,5 +1,8 @@
 The project houses code used to generate the Free Law Reporter. Please note that while the code works on our servers, it will require some modification to work on yours.
 
+17 October 2012
+*Restructuring the project so that you can actaully get all of the code to run your very own FLR*
+
 Notes on getting things going.
 
 parseXML.php - parses the raw RECOP XML slip opinion files into valid XHTML verified by HTML Tidy. XHTML is required for the .pub files. Once the files are created it uses the PHP CURL library to pass the file to Apache Solr. It requires inlcudes/lib.uuid.php for generation of UUIDs for each document. This file requires PHP CURL and Tidy extensions. This file is intended to be run from the command line and takes 2 arguments: the absolute path to the local RECOP slip opinion directory and the volume number.
