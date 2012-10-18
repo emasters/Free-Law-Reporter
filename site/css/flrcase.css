@@ -1,0 +1,32 @@
+html {
+  background: #f6f6ff;
+}
+
+body {
+  background: white;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 80%;
+  margin-left: 7%;
+}
+div#caption { 
+  margin: 1em 0 1.5em 0;
+  padding: 0.4em 1em 0.5em 1em;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+div#caption p {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.7em;
+  vertical-align: text-top;
+  padding: 4px;
+  margin: 0 0 0 -4px;
+  font-size: 100%;
+  margin: 0.7em 0 0.7em 0;
+  text-indent: 0;
+  border: none;
+}
+
+div#opinion p {
+  border: none;
+}

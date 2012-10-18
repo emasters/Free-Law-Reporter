@@ -1,0 +1,373 @@
+/* 
+
+    By Public.Resource.Org, Inc.
+    Last revised: Fri Feb 8 16:23:45 PST 2008
+    No Rights Reserved.
+
+    Author: Joel Hardi <joel -at- hardi.org>
+    
+    Becase the cases we're publishing are standard, semantic
+    XHTML, you can do almost anything you want with them.
+    For instance, you can:
+
+    1. Import them into your favorite XML parser (because they're
+       100% valid XML!) and transform them almost any way you want.
+
+    2. Manipulate them using DOM languages like JavaScript, right
+       in your browser.
+
+    3. Use CSS to change the way they look and how they're
+       laid out.
+
+    This file has comments like this one throughout, to help 
+    you get started with #3. Have fun!
+
+*/
+
+/* -- undo browser HTML defaults -- */
+:link,:visited {text-decoration: none;}
+ul,ol {list-style: none;}
+h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 1em;}
+ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+a img,:link img,:visited img {border: none;}
+address {font-style: normal;}
+
+html {
+  background: #f6f6ff;
+  font-size: 100%;
+}
+
+body {
+  margin: 1em 6em 3em 6em;
+  padding: 1em 3em 0 3em;
+  background: white;
+  font-family: Georgia, serif;
+  border: 2px solid #eef;
+  border-left: 3px solid #eef;
+  border-right: 3px solid #eef;
+}
+
+a {
+  color: #33c;
+}
+
+a:hover {
+  text-decoration: underline;
+  background: #eef;
+}
+
+/*
+   div tags wrap sections of text with
+   common properties. In the original source 
+   text, they were paragraphs.
+*/
+div {
+  position: relative;
+}
+
+/*
+   All of our text is a p, so this rule 
+   applies to everything.
+*/
+
+p {
+  font-size: 0.9em;
+  text-indent: 1em;
+  margin-top: 0.9em;
+  margin-bottom: 0.9em;
+}
+
+/*
+   These p's were centered in the source text.
+   But you can style them however you want!
+*/
+p.center {
+  text-indent: 0;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1.4em;
+}
+
+/*
+   These p's were indented in the source text.
+*/
+p.indent { }
+
+/*
+   The next few rules apply to all of the case's header 
+   information: name, cite, parties, docket, court and dates.
+*/
+p.case_name, p.case_cite, p.parties, p.docket, p.court, p.date {
+  text-align: center;
+  margin: 0.5em;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+p.case_name:hover, p.case_cite:hover, p.parties:hover, p.docket:hover, p.court:hover, p.date:hover {
+  border: 2px dotted #eee;
+}
+
+p.case_name:hover:after, p.case_cite:hover:after, p.parties:hover:after, p.docket:hover:after, p.court:hover:after, p.date:hover:after {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.6em;
+  font-weight: bold;
+  font-style: normal;
+  color: #ccc;
+}
+
+/* 
+   Case name. Note how we use the :hover:after rule
+   to show generated content, in this case, "(case name)".
+*/
+p.case_name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+p.case_name:hover:after {
+  content: " (case name)";
+}
+
+/* Citation */
+p.case_cite {
+  font-size: 1.1em;
+}
+p.case_cite:hover:after {
+  content: " (citation)";
+}
+
+/* Parties */
+p.parties {
+  font-size: 1.1em;
+}
+p.parties:hover:after {
+  content: " (parties)";
+}
+
+/* Docket number */
+p.docket {
+  font-style: italic;
+  font-size: 1.1em;
+}
+p.docket:hover:after {
+  content: " (docket number)";
+}
+
+/* Court */
+p.court {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+p.court:hover:after {
+  content: " (court)";
+}
+
+/* Dates (decided, heard, appealed etc.) */
+p.date {
+  font-style: italic;
+  font-size: 1.0em;
+  margin: 0;
+}
+p.date:hover:after {
+  content: " (date)";
+}
+
+/*
+   This div wraps the preliminary p's which include the:
+     * appellant attorneys
+     * appellee attorneys
+     * consolidations or related cases
+     * court appealed from
+     * panel
+     * presiding judge
+     * author of the majority opinion
+*/
+div.prelims { 
+  margin: 1em 0 1.5em 0;
+  padding: 0.4em 1em 0.5em 1em;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+div.prelims p {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.75em;
+  margin: 0.7em 0 0.7em 0;
+  text-indent: 0;
+}
+
+/*
+   Footnote text, which shows up mostly at the end of each
+   case, but sometimes also sprinkled in relevant sections
+   higher up.
+*/
+div.footnotes {
+  margin-top: 1.4em;
+  border-top: 1px solid #ccc;
+  padding-top: 1px;
+}
+
+div.footnote {
+  border-top: 1px dotted #ccc;
+  font-size: 0.9em;
+}
+
+div.footnote p {
+  padding-left: 2em;
+  text-indent: 0;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+/*
+   These are the links that appear in the text, which link
+   to the footnote text farther down in the case.
+*/
+a.footnote, div.footnote p a.footnote {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.7em;
+  vertical-align: text-top;
+  padding: 4px;
+  margin: 0 0 0 -4px;
+}
+
+a.footnote:hover, div.footnote p a.footnote:hover {
+  padding: 3px;
+  border: 1px solid #ddf;
+}
+
+p.indent:hover a.footnote, div.footnote p a.footnote:hover {
+  padding: 3px;
+  border: 1px solid #ddf;
+}
+
+/*
+   These are the links in the footnote text, which link back to the 
+   place the footnote appeared in the case, so you can jump back to 
+   where you were reading.
+   (CSS tip: style rules defined for plain a.footnote also apply here.)
+*/
+div.footnote a.footnote {
+  display: block;
+  padding: 5px;
+  margin: 0;
+  width: 10em;
+  position: absolute;
+  top: 0.4em;
+  left: -8.4em;
+  text-align: right;
+}
+
+div.prelims div.footnote a.footnote {
+  top: 0.2em;
+  left: -8.6em;
+}
+
+div.footnote a.footnote:hover {
+  padding: 4px;
+  border-right: 2px solid #ddf;
+  border-bottom: 2px solid #ddf;
+}
+
+div.footnote a.footnote:hover:before {
+  content: "Return to text at ";
+}
+
+/*
+   These are the (extremely rare) footnote references within the text
+   of footnotes themselves.
+*/
+div.footnote p a.footnote {
+  display: inline;
+  width: auto;
+  position: static;
+  top: 0;
+  left: 0;
+  text-align: left;
+}
+
+div.footnote p a.footnote:hover:before {
+  content: '';
+}
+
+/*
+   Numbered paragraphs from the opinion
+*/
+div.num p { }
+
+/*
+   The numbers themselves, such as "[10]"
+*/
+span.num {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #999;
+  display: block;
+  position: absolute;
+  width: 8em;
+  left: -13em;
+  text-align: right;
+}
+
+div.num:hover span.num {
+  color: black;
+}
+
+/*
+   Preformatted passages which were preformatted in the original text.
+*/
+pre {
+  margin: 1.5em 0 1.5em 0;
+  padding: 1.1em 1em 1.1em 0.7em;
+  border: 1px solid #ddd;
+  font-size: 0.9em;
+}
+
+div.footnote pre {
+  margin: 0.7em 0 0.7em 2.6em;
+  padding: 0.7em;
+}
+
+/*
+   Quoted passages which were indented in the original text.
+*/
+blockquote p, div.footnote blockquote p {
+  text-indent: 0;
+  margin: 0.7em 3em 0.7em 3em;
+  border: 0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.75em;
+}
+
+blockquote p.center {
+  font-weight: normal;
+  margin-top: 0.7em;
+}
+
+/*
+   This is our footer. It wasn't part of the original case contents.
+   Since these cases are 100% public domain, you can just have your
+   XML parser throw it away!
+*/
+div#footer {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+  top: 32px;
+  text-align: center;
+  margin: -32px auto 0 auto;
+}
+
+div#footer:before {
+  /* the Seal of Approval! */
+  content: url("http://public.resource.org/seal.head.jpg");
+}
+
+div#footer p {
+  color: #339;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 0.5em;
+  text-transform: uppercase;
+  margin: 0.5em auto 0.5em auto;
+}

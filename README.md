@@ -1,7 +1,10 @@
 The project houses code used to generate the Free Law Reporter. Please note that while the code works on our servers, it will require some modification to work on yours.
 
 17 October 2012
+
 *Restructuring the project so that you can actaully get all of the code to run your very own FLR*
+
+---
 
 Notes on getting things going.
 

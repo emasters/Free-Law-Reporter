@@ -1,0 +1,94 @@
+html {
+  background: #f6f6ff
+}
+body {
+  background: white;
+  color: #000;
+  font-size: 12px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+article p {
+  border: 1px solid #666;
+  overflow: hidden;
+  padding: 10px 7px;
+}
+em {
+  background-color:yellow;
+}
+h5 {
+  margin-bottom: 5px;
+}
+header{
+  padding-bottom: 75px;
+}
+.footerlogo {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 75px;
+}
+.toplogo {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.opiniontitle {
+  font-weight: bold;
+}
+.searchquery {
+  font-size: large;
+  margin-bottom: 25px;
+}
+.c2 {
+  border: none;
+}
+.nav {
+  background-color: #f6f6ff;
+  font-size: larger;
+}
+.container_12,
+.container_16,
+.container_24 {
+  background-color: #fff;
+  background-repeat: repeat-y;
+  margin-bottom: 20px;
+}
+
+.container_12 {
+  /*background-image: url(../img/12_col.gif);*/
+}
+
+.container_16 {
+  background-image: url(../img/16_col.gif);
+}
+
+.container_24 {
+  background-image: url(../img/24_col.gif);
+}
+
+.container_12, .grid_12, .grid_10, .grid_8, .grid_4, .grid_2{
+  padding-bottom:10px;
+}
