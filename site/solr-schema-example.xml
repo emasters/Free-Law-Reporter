@@ -1,0 +1,40 @@
+<!--
+This file contains info that is added to Solr's schema.xml to customize
+for the indexing of court opinions.
+Solr is a complicated system and its full configuraton is beyond
+the scope of this document.
+-->
+
+<field name="title" type="string" indexed="true" stored="true"/>
+<field name="subject" type="text" indexed="true" stored="true"/>
+<field name="description" type="text" indexed="true" stored="true"/>
+<field name="comments" type="text" indexed="true" stored="true"/>
+<field name="author" type="string" indexed="true" stored="true"/>
+<field name="keywords" type="textgen" indexed="true" stored="true"/>
+<field name="category" type="textgen" indexed="true" stored="true"/>
+<field name="content_type" type="string" indexed="true" stored="true" multiValued="true"/>
+<field name="last_modified" type="date" indexed="true" stored="true"/>
+<field name="links" type="string" indexed="true" stored="true" multiValued="true"/>
+<field name="courtabbreviation" type="string" indexed="true" stored="true"/>
+<field name="courtname" type="string" indexed="true" stored="true"/>
+<field name="docketnumber" type="string" indexed="true" stored="true" multiValued="true"/>
+<field name="decisiondate" type="tdate" indexed="true" stored="true" multiValued="true"/>
+<field name="parties" type="string" indexed="true" stored="true"/>
+<field name="lawyers" type="string" indexed="true" stored="true"/>
+<field name="epuburl" type="string" indexed="false" stored="true"/>
+<field name="jurisdiction" type="string" indexed="true" stored="true"/>
+<field name="creation" type="string" indexed="false" stored="true"/>
+<field name="body" type="text" indexed="true" stored="true"/>
+<field name="collection" type="string" indexed="true" stored="true"/>
+<field name="uuid" type="string" indexed="false" stored="true"/>
+<field name="reporterseries" type="string" indexed="true" stored="true"/>
+<field name="citation" type="string" indexed="true" stored="true" multiValued="true"/>
+
+<copyField source="body" dest="text"/>
+<copyField source="parties" dest="text"/>
+<copyField source="lawyers" dest="text"/>
+<copyField source="author" dest="text"/>
+<copyField source="courtname" dest="text"/>
+<copyField source="citation" dest="text"/>
+
+<copyField source="jurisdiction" dest="alphaNameSort"/>
